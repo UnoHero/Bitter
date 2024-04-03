@@ -1,7 +1,11 @@
 const express = require('express')
 
 const {
-
+  getPosts,
+  getPost,
+  createPost,
+  deletePost,
+  updatePost,
 } = require('../controllers/postController')
 // const requireAuth = require('../middleware/requireAuth')
 
