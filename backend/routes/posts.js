@@ -7,15 +7,15 @@ const {
   deletePost,
   updatePost,
 } = require('../controllers/postController')
-// const requireAuth = require('../middleware/requireAuth')
+const requireAuth = require('../middleware/requireAuth')
 
 const router = express.Router()
 
-// require auth
-//router.use(requireAuth)
-
 // GET all posts
 router.get("/", getPosts)
+
+// require auth
+router.use(requireAuth)
 
 // Get a single post
 router.get("/:id", getPost)
