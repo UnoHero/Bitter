@@ -13,7 +13,7 @@ export const useLogin = () => {
     const response = await fetch("http://127.0.0.1:3001/api/login", {
       method: "POST",
       headers: { "Content-Type" : "application/json"},
-      body: JSON.stringify({ name, passowrd })
+      body: JSON.stringify({ name, password })
     })
     const json = await response.json()
 
@@ -23,7 +23,7 @@ export const useLogin = () => {
     }
     if (response.ok) {
       // save the user to local storage
-      localStorage.setItem("user", Json.stringify(json))
+      localStorage.setItem("user", JSON.stringify(json))
 
       // update the auth context
       dispatch({type: "LOGIN", payload:json})

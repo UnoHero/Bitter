@@ -13,7 +13,7 @@ export const useSignup = () => {
     const response = await fetch ("http://127.0.0.1:3001/api/signup", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ name, passowrd })
+      body: JSON.stringify({ name, password }) // corrected typo here
     })
     const json = await response.json()
 

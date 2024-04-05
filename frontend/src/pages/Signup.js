@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -79,7 +79,7 @@ const LinkButton = styled(Link)`
   color: #007bff;
 `;
 
-const Login = () => {
+const Signup = () => {
   const [password, setPassword] = useState("")
   const [name, setName] = useState("")
   const {login, error, isLoading} = useLogin()
@@ -119,3 +119,5 @@ const Login = () => {
     </PageWrapper>
   )
 }
+
+export default Signup;
