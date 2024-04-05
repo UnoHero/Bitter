@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 // get all post
 const getPosts = async (req, res) => {
-  const user_id = req.user.user_id
+  const user_id = req.user?.user_id
 
   const posts = await Post.find({user_id}).sort({createdAt: -1})
 
