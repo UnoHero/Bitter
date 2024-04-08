@@ -14,16 +14,14 @@ const router = express.Router()
 // GET all posts
 router.get("/", getPosts)
 
-// POST a new post
-router.post("/", createPost)
-
 // require auth
 router.use(requireAuth)
 
+// POST a new post
+router.post("/", createPost)
+
 // Get a single post
 router.get("/:id", getPost)
-
-
 
 // DELETE a workout
 router.delete("/:id", deletePost)

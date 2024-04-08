@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 
@@ -73,11 +73,13 @@ const Header = () => {
       <Link to="/">
         <Logo src="/logo.png" alt="Logo" />
       </Link>
-      <HeadLine>Bitter</HeadLine>
+      <HeadLine>
+        Bitter {user && <span>- {user.userName}</span>}
+      </HeadLine>
       <ButtonsContainer>
         {user ? (
           <>
-            <span>{user.name}</span>
+            <LinkButtons to="/profile">Profile</LinkButtons>
             <Buttons onClick={handleClick}>Log Out</Buttons>
           </>
         ) : (

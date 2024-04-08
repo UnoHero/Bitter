@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLogin } from "../hooks/useLogin";
+import { useSignup } from "../hooks/useSignup";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -81,13 +81,13 @@ const LinkButton = styled(Link)`
 
 const Signup = () => {
   const [password, setPassword] = useState("")
-  const [name, setName] = useState("")
-  const {login, error, isLoading} = useLogin()
+  const [userName, setUserName] = useState("")
+  const {signup, error, isLoading} = useSignup()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    await login(name, password)
+    await signup(userName, password)
   }
   return (
     <PageWrapper>
@@ -99,8 +99,8 @@ const Signup = () => {
             <Label>User Name:</Label>
             <Input 
               type="text"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
+              onChange={(e) => setUserName(e.target.value)}
+              value={userName}
             />
 
             <Label>Password</Label>

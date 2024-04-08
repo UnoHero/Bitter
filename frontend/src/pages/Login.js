@@ -81,13 +81,13 @@ const LinkButton = styled(Link)`
 
 const Login = () => {
   const [password, setPassword] = useState("")
-  const [name, setName] = useState("")
+  const [userName, setUserName] = useState("")
   const {login, error, isLoading} = useLogin()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    await login(name, password)
+    await login(userName, password)
   }
   return (
     <PageWrapper>
@@ -99,8 +99,8 @@ const Login = () => {
             <Label>User Name:</Label>
             <Input 
               type="text"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
+              onChange={(e) => setUserName(e.target.value)}
+              value={userName}
             />
 
             <Label>Password</Label>
