@@ -25,7 +25,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:3001/api/posts");
+        const response = await fetch("http://10.12.3.172/api/posts");
         if (!response.ok) {
           throw new Error("Failed to fetch posts");
         }

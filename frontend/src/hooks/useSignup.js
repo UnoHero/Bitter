@@ -10,7 +10,7 @@ export const useSignup = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch ("http://127.0.0.1:3001/api/user/signup", {
+    const response = await fetch ("http://10.12.3.172/api/user/signup", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({ userName, password }) 
